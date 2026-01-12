@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Portal - Find and book tutors">
+    <title>Student Portal | EduSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .portal-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+        
+        .tutor-search {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .search-results {
+            margin-top: 2rem;
+        }
+        
+        .tutor-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+        
+        .tutor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tutor-card h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tutor-card .subject-tag {
+            background: #e8f4fc;
+            color: #3498db;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+        
+        .request-form-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .portal-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <h1><i class="fas fa-graduation-cap"></i> EduSphere</h1>
+                <p class="tagline">Student Portal</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="subjects.html">Subjects</a></li>
+                    <li><a href="student-portal.html" class="active">Student</a></li>
+                    <li><a href="tutor-portal.html">Tutor</a></li>
+                    <li><a href="admin-portal.html">Admin</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <h1>Student Portal</h1>
+            <p class="subtitle">Find qualified tutors and request sessions</p>
+        </section>
+
+        <div class="portal-container">
+            <!-- Tutor Search -->
+            <div class="tutor-search">
+                <h2>Find Tutors</h2>
+                <div class="search-form">
+                    <div class="form-group">
+                        <label for="search-subject">Subject</label>
+                        <select id="search-subject" name="subject">
+                            <option value="">All Subjects</option>
+                            <option value="mathematics">Mathematics</option>
+                            <option value="physics">Physics</option>
+                            <option value="chemistry">Chemistry</option>
+                            <option value="biology">Biology</option>
+                            <option value="english">English</option>
+                            <option value="bm">Bahasa Melayu</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="search-level">Education Level</label>
+                        <select id="search-level" name="level">
+                            <option value="">All Levels</option>
+                            <option value="upsr">UPSR</option>
+                            <option value="pt3">PT3</option>
+                            <option value="spm">SPM</option>
+                            <option value="stpm">STPM</option>
+                            <option value="university">University</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="search-mode">Teaching Mode</label>
+                        <select id="search-mode" name="mode">
+                            <option value="">Any Mode</option>
+                            <option value="online">Online</option>
+                            <option value="in-person">In-Person</option>
+                            <option value="both">Both</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="search-btn">Search Tutors</button>
+                </div>
+                
+                <!-- Search Results (Table Format) -->
+                <div class="search-results">
+                    <h3>Available Tutors</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tutor Name</th>
+                                <th>Subject</th>
+                                <th>Qualification</th>
+                                <th>Mode</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dr. Ahmad Ali</td>
+                                <td>Mathematics</td>
+                                <td>PhD Mathematics</td>
+                                <td>Online/In-Person</td>
+                                <td><button class="btn btn-small" onclick="selectTutor('Dr. Ahmad Ali')">Request</button></td>
+                            </tr>
+                            <tr>
+                                <td>Ms. Sarah Lim</td>
+                                <td>Physics</td>
+                                <td>MSc Physics</td>
+                                <td>Online</td>
+                                <td><button class="btn btn-small" onclick="selectTutor('Ms. Sarah Lim')">Request</button></td>
+                            </tr>
+                            <tr>
+                                <td>Mr. Raj Kumar</td>
+                                <td>Chemistry</td>
+                                <td>MSc Chemistry</td>
+                                <td>In-Person</td>
+                                <td><button class="btn btn-small" onclick="selectTutor('Mr. Raj Kumar')">Request</button></td>
+                            </tr>
+                            <tr>
+                                <td>Ms. Julia Tan</td>
+                                <td>English</td>
+                                <td>MA English Literature</td>
+                                <td>Online/In-Person</td>
+                                <td><button class="btn btn-small" onclick="selectTutor('Ms. Julia Tan')">Request</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Session Request Form (Required: Form with 3+ elements) -->
+            <div class="request-form-section">
+                <h2>Request Tutoring Session</h2>
+                <form action="https://www.mindspun.com/your-form-endpoint" method="POST" id="session-request-form">
+                    <div class="form-group">
+                        <label for="student-name">Your Name *</label>
+                        <input type="text" id="student-name" name="student_name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="student-email">Email Address *</label>
+                        <input type="email" id="student-email" name="student_email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="student-phone">Phone Number</label>
+                        <input type="tel" id="student-phone" name="student_phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="selected-tutor">Selected Tutor *</label>
+                        <input type="text" id="selected-tutor" name="selected_tutor" required readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="session-subject">Subject Needed *</label>
+                        <select id="session-subject" name="session_subject" required>
+                            <option value="">Select Subject</option>
+                            <option value="mathematics">Mathematics</option>
+                            <option value="additional_maths">Additional Mathematics</option>
+                            <option value="physics">Physics</option>
+                            <option value="chemistry">Chemistry</option>
+                            <option value="biology">Biology</option>
+                            <option value="english">English</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="education-level">Education Level *</label>
+                        <select id="education-level" name="education_level" required>
+                            <option value="">Select Level</option>
+                            <option value="upsr">UPSR (Primary)</option>
+                            <option value="pt3">PT3 (Form 1-3)</option>
+                            <option value="spm">SPM (Form 4-5)</option>
+                            <option value="stpm">STPM</option>
+                            <option value="university">University</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="preferred-mode">Preferred Mode *</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="preferred_mode" value="online" required> Online</label>
+                            <label><input type="radio" name="preferred_mode" value="in-person"> In-Person</label>
+                            <label><input type="radio" name="preferred_mode" value="both"> Both (Flexible)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="preferred-time">Preferred Time Slot *</label>
+                        <input type="datetime-local" id="preferred-time" name="preferred_time" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="session-frequency">Session Frequency</label>
+                        <select id="session-frequency" name="session_frequency">
+                            <option value="">Select Frequency</option>
+                            <option value="once">One-time Session</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="biweekly">Twice a Week</option>
+                            <option value="monthly">Monthly</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additional-notes">Additional Notes</label>
+                        <textarea id="additional-notes" name="additional_notes" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="checkbox" id="terms-agree" name="terms_agree" required>
+                        <label for="terms-agree">I agree to the <a href="#">terms and conditions</a> *</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </form>
+                
+                <p class="form-note">We'll match you with a suitable tutor within 24 hours.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="subjects.html">Browse Subjects</a></li>
+                        <li><a href="student-portal.html">Student Login</a></li>
+                        <li><a href="tutor-portal.html">Tutor Registration</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Faculty of Computer Science, UMT</p>
+                    <p><i class="fas fa-phone"></i> 09-668 4100</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@edusphere.edu.my">info@edusphere.edu.my</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EduSphere. CSF3133 Group 6 Project.</p>
+                <p>Related Site: <a href="https://www.myprivatetutor.com" target="_blank">MyPrivateTutor</a> | 
+                   <a href="https://sifututor.my" target="_blank">SifuTutor</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function selectTutor(tutorName) {
+            document.getElementById('selected-tutor').value = tutorName;
+            alert('Selected tutor: ' + tutorName);
+        }
+        
+        // Form validation
+        document.getElementById('session-request-form').addEventListener('submit', function(e) {
+            const tutorField = document.getElementById('selected-tutor');
+            if (!tutorField.value) {
+                e.preventDefault();
+                alert('Please select a tutor from the list first.');
+                return false;
+            }
+            alert('Session request submitted successfully!');
+            return true;
+        });
+    </script>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

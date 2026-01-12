@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact One Stop Centre for Tutoring">
+    <title>Contact Us | EduSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #3498db;
+            margin-right: 1rem;
+            min-width: 30px;
+        }
+        
+        .map-container {
+            margin: 3rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .opening-hours {
+            margin: 2rem 0;
+        }
+        
+        .hours-table {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .hours-table tr {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .hours-table td {
+            padding: 0.5rem 0;
+        }
+        
+        .hours-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .department-contacts {
+            margin: 2rem 0;
+        }
+        
+        .department-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .department-card {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <h1><i class="fas fa-graduation-cap"></i> EduSphere</h1>
+                <p class="tagline">Contact & Support</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="subjects.html">Subjects</a></li>
+                    <li><a href="student-portal.html">Student</a></li>
+                    <li><a href="tutor-portal.html">Tutor</a></li>
+                    <li><a href="admin-portal.html">Admin</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <h1>Contact Us</h1>
+            <p class="subtitle">Get in touch with our team for support and inquiries</p>
+        </section>
+
+        <div class="contact-container">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p>We're here to help with any questions about our platform, registration, or technical support.</p>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Address</h3>
+                        <p>Faculty of Computer Science and Mathematics<br>
+                        Universiti Malaysia Terengganu<br>
+                        21030 Kuala Nerus<br>
+                        Terengganu, Malaysia</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Phone Numbers</h3>
+                        <p>General Inquiries: 09-668 4100<br>
+                        Student Support: 09-668 4101<br>
+                        Tutor Support: 09-668 4102</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Email Addresses</h3>
+                        <p>General: <a href="mailto:info@edusphere.edu.my">info@edusphere.edu.my</a><br>
+                        Students: <a href="mailto:students@edusphere.edu.my">students@edusphere.edu.my</a><br>
+                        Tutors: <a href="mailto:tutors@edusphere.edu.my">tutors@edusphere.edu.my</a><br>
+                        Support: <a href="mailto:support@edusphere.edu.my">support@edusphere.edu.my</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h3>Operating Hours</h3>
+                        <div class="opening-hours">
+                            <table class="hours-table">
+                                <tr>
+                                    <td>Monday - Friday</td>
+                                    <td>8:00 AM - 10:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Saturday</td>
+                                    <td>9:00 AM - 6:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Sunday</td>
+                                    <td>10:00 AM - 4:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Public Holidays</td>
+                                    <td>Closed</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div >
+                    <div >
+                        <i ></i>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+                <h2>Send Us a Message</h2>
+                <p>Fill out the form below and we'll respond within 24 hours.</p>
+                
+                <form action="https://www.mindspun.com/contact-form" method="POST" id="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">Full Name *</label>
+                        <input type="text" id="contact-name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-email">Email Address *</label>
+                        <input type="email" id="contact-email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-phone">Phone Number</label>
+                        <input type="tel" id="contact-phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-category">Inquiry Category *</label>
+                        <select id="contact-category" name="category" required>
+                            <option value="">Select Category</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="student">Student Registration</option>
+                            <option value="tutor">Tutor Application</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="feedback">Feedback/Suggestion</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-subject">Subject *</label>
+                        <input type="text" id="contact-subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-message">Message *</label>
+                        <textarea id="contact-message" name="message" rows="6" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-preference">Preferred Contact Method</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="preference" value="email" checked> Email</label>
+                            <label><input type="radio" name="preference" value="phone"> Phone Call</label>
+                            <label><input type="radio" name="preference" value="whatsapp"> WhatsApp</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Subscribe to our newsletter for updates</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                
+                <p class="form-note">For urgent matters, call us at <a href="tel:096684100">09-668 4100</a></p>
+            </div>
+        </div>
+        
+        <!-- Department Contacts -->
+        <section class="department-contacts">
+            <h2>Department Contacts</h2>
+            <div class="department-grid">
+                <div class="department-card">
+                    <h4><i class="fas fa-user-graduate"></i> Student Support</h4>
+                    <p><strong>Email:</strong> students@edusphere.edu.my</p>
+                    <p><strong>Phone:</strong> 09-668 4101</p>
+                    <p>For student registration, session requests, and general student inquiries.</p>
+                </div>
+                <div class="department-card">
+                    <h4><i class="fas fa-chalkboard-teacher"></i> Tutor Support</h4>
+                    <p><strong>Email:</strong> tutors@edusphere.edu.my</p>
+                    <p><strong>Phone:</strong> 09-668 4102</p>
+                    <p>For tutor applications, profile management, and payment inquiries.</p>
+                </div>
+                <div class="department-card">
+                    <h4><i class="fas fa-cogs"></i> Technical Support</h4>
+                    <p><strong>Email:</strong> tech@edusphere.edu.my</p>
+                    <p><strong>Phone:</strong> 09-668 4103</p>
+                    <p>For website issues, login problems, and technical assistance.</p>
+                </div>
+                <div class="department-card">
+                    <h4><i class="fas fa-handshake"></i> Partnership</h4>
+                    <p><strong>Email:</strong> partners@edusphere.edu.my</p>
+                    <p><strong>Phone:</strong> 09-668 4104</p>
+                    <p>For institutional partnerships and collaborative opportunities.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Map Section -->
+        <div class="map-container">
+            <h3>Our Location</h3>
+            <div style="width: 100%; height: 400px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
+                <div style="text-align: center;">
+                    <i class="fas fa-map-marker-alt" style="font-size: 3rem; color: #e74c3c; margin-bottom: 1rem;"></i>
+                    <h4>Universiti Malaysia Terengganu</h4>
+                    <p>Faculty of Computer Science and Mathematics</p>
+                    <p>21030 Kuala Nerus, Terengganu</p>
+                    <a href="https://maps.google.com/?q=Universiti+Malaysia+Terengganu" 
+                       target="_blank" 
+                       class="btn" 
+                       style="margin-top: 1rem;">
+                        <i class="fas fa-directions"></i> Open in Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Answer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>How do I register as a student?</td>
+                        <td>Click on "Student Portal" in the navigation menu and fill out the registration form. It's free for students.</td>
+                    </tr>
+                    <tr>
+                        <td>What documents are needed for tutor registration?</td>
+                        <td>Academic certificates, identification, and proof of teaching experience (if any).</td>
+                    </tr>
+                    <tr>
+                        <td>How long does tutor verification take?</td>
+                        <td>Usually 3-5 working days after submitting all required documents.</td>
+                    </tr>
+                    <tr>
+                        <td>Can I change my session time after booking?</td>
+                        <td>Yes, contact your tutor directly or use the reschedule option in your dashboard.</td>
+                    </tr>
+                    <tr>
+                        <td>Is online tutoring available?</td>
+                        <td>Yes, many tutors offer both online and in-person sessions.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="subjects.html">Browse Subjects</a></li>
+                        <li><a href="student-portal.html">Student Login</a></li>
+                        <li><a href="tutor-portal.html">Tutor Registration</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Faculty of Computer Science, UMT</p>
+                    <p><i class="fas fa-phone"></i> 09-668 4100</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@edusphere.edu.my">info@edusphere.edu.my</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EduSphere. CSF3133 Group 6 Project.</p>
+                <p>Related Site: <a href="https://www.myprivatetutor.com" target="_blank">MyPrivateTutor</a> | 
+                   <a href="https://sifututor.my" target="_blank">SifuTutor</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Contact form validation
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            const email = document.getElementById('contact-email').value;
+            const subject = document.getElementById('contact-subject').value;
+            
+            if (!validateEmail(email)) {
+                e.preventDefault();
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            
+            if (subject.length < 5) {
+                e.preventDefault();
+                alert('Please enter a more descriptive subject.');
+                return false;
+            }
+            
+            alert('Message sent successfully! We will respond within 24 hours.');
+            return true;
+        });
+        
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

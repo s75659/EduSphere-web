@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse Subjects - One Stop Centre for Tutoring">
+    <title>Subject Listings | EduSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <h1><i class="fas fa-graduation-cap"></i> EduSphere</h1>
+                <p class="tagline">Browse Available Subjects</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="subjects.html" class="active">Subjects</a></li>
+                    <li><a href="student-portal.html">Student</a></li>
+                    <li><a href="tutor-portal.html">Tutor</a></li>
+                    <li><a href="admin-portal.html">Admin</a></li>
+					<li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <h1>Subject Listings</h1>
+            <p class="subtitle">Browse available subjects and find suitable tutors</p>
+        </section>
+
+        <!-- Subject Categories -->
+        <section class="subject-categories">
+            <h2>Categories</h2>
+            <div class="category-filters">
+                <button class="category-btn active" data-category="all">All Subjects</button>
+                <button class="category-btn" data-category="science">Science & Mathematics</button>
+                <button class="category-btn" data-category="languages">Languages</button>
+                <button class="category-btn" data-category="humanities">Humanities</button>
+                <button class="category-btn" data-category="test-prep">Test Preparation</button>
+            </div>
+        </section>
+
+        <!-- Subject Table (Required: One page with table) -->
+        <section class="subject-table-section">
+            <h2>Available Subjects & Tutor Information</h2>
+            <table class="subject-table">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Category</th>
+                        <th>Education Levels</th>
+                        <th>Available Tutors</th>
+                        <th>Average Rate/Hour</th>
+                        <th>Popularity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-category="science">
+                        <td><i class="fas fa-calculator"></i> Mathematics</td>
+                        <td>Science & Mathematics</td>
+                        <td>UPSR, PT3, SPM, STPM, University</td>
+                        <td>42</td>
+                        <td>RM 30 - 70</td>
+                        <td><span class="popularity high">Very High</span></td>
+                        <td><a href="student-portal.html" class="btn btn-small">Find Tutor</a></td>
+                    </tr>
+                    <tr data-category="science">
+                        <td><i class="fas fa-square-root-alt"></i> Additional Mathematics</td>
+                        <td>Science & Mathematics</td>
+                        <td>SPM, STPM</td>
+                        <td>18</td>
+                        <td>RM 40 - 80</td>
+                        <td><span class="popularity high">High</span></td>
+                        <td><a href="student-portal.html" class="btn btn-small">Find Tutor</a></td>
+                    </tr>
+                    <tr data-category="science">
+                        <td><i class="fas fa-atom"></i> Physics</td>
+                        <td>Science & Mathematics</td>
+                        <td>PT3, SPM, STPM, University</td>
+                        <td>25</td>
+                        <td>RM 35 - 75</td>
+                        <td><span class="popularity medium">Medium</span></td>
+                        <td><a href="student-portal.html" class="btn btn-small">Find Tutor</a></td>
+                    </tr>
+                    <tr data-category="science">
+                        <td><i class="fas fa-vial"></i> Chemistry</td>
+                        <td>Science & Mathematics</td>
+                        <td>PT3, SPM, STPM, University</td>
+                        <td>22</td>
+                        <td>RM 35 - 75</td>
+                        <td><span class="popularity medium">Medium</span></td>
+                        <td><a href="student-portal.html" class="btn btn-small">Find Tutor</a></td>
+                    </tr>
+                    <tr data-category="science">
+                        <td><i class="fas fa-dna"></i> Biology</td>
+                        <td>Science & Mathematics</td>
+                        <td>PT3, SPM, STPM, University</td>
+                        <td>19</td>
+                        <td>RM 35 - 70</td>
+                        <td><span class="popularity medium">Medium</span></td>
+                        <td><a href="student-portal.html" class="btn btn-small">Find Tutor</a></td>
+                    </tr>
+                    <tr data-category="science">
+                        <td><i class="fas fa-flask"></i> Science</td>
+                        <td>Science & Mathematics</td>
+                        <td>UPSR, PT3</td>
+                        <td>28</td>
+                        <td>RM 25 - 45</td>
+                        <td><span class="popularity high">High</span></td>
+                        <td><a href="student-portal.html" class="btn btn-small">Find Tutor</a></td>
+                    </tr>
+                    <tr data-category="languages">
+                        <td><i class="fas fa-language"></i> English</td>
+                        <td>Languages</td>
+                        <td>All Levels</td>
+                        <td>35</td>
+                        <td>RM 25 - 60</td>
+                        <td><span class="popularity high">High</span></td>
+                        <td><a href="student-portal.html" class="btn btn-small">Find Tutor</a></td>
+                    </tr>
+                    <tr data-category="languages">
+                        <td><i class="fas fa-book"></i> Bahasa Melayu</td>
+                        <td>Languages</td>
+                        <td>All Levels</td>
+                        <td>30</td>
+                        <td>RM 20 - 50</td>
+                        <td><span class="popularity medium">Medium</span></td>
+                        <td><a href="student-portal.html" class="btn btn-small">Find Tutor</a></td>
+                    </tr>
+                    <tr data-category="languages">
+                        <td><i class="fas fa-globe-asia"></i> Mandarin</td>
+                        <td>Languages</td>
+                        <td>All Levels</td>
+                        <td>15</td>
+                        <td>RM 30 - 65</td>
+                        <td><span class="popularity low">Low</span></td>
+                        <td><a href="student-portal.html" class="btn btn-small">Find Tutor</a></td>
+                    </tr>
+                    <tr data-category="humanities">
+                        <td><i class="fas fa-landmark"></i> Sejarah</td>
+                        <td>Humanities</td>
+                        <td>PT3, SPM</td>
+                        <td>12</td>
+                        <td>RM 20 - 45</td>
+                        <td><span class="popularity medium">Medium</span></td>
+                        <td><a href="student-portal.html" class="btn btn-small">Find Tutor</a></td>
+                    </tr>
+                    <tr data-category="humanities">
+                        <td><i class="fas fa-globe-americas"></i> Geography</td>
+                        <td>Humanities</td>
+                        <td>PT3, SPM</td>
+                        <td>8</td>
+                        <td>RM 20 - 45</td>
+                        <td><span class="popularity low">Low</span></td>
+                        <td><a href="student-portal.html" class="btn btn-small">Find Tutor</a></td>
+                    </tr>
+                    <tr data-category="test-prep">
+                        <td><i class="fas fa-file-alt"></i> SPM Intensive</td>
+                        <td>Test Preparation</td>
+                        <td>SPM</td>
+                        <td>40</td>
+                        <td>RM 40 - 80</td>
+                        <td><span class="popularity high">High</span></td>
+                        <td><a href="student-portal.html" class="btn btn-small">Find Tutor</a></td>
+                    </tr>
+                    <tr data-category="test-prep">
+                        <td><i class="fas fa-file-alt"></i> PT3 Preparation</td>
+                        <td>Test Preparation</td>
+                        <td>PT3</td>
+                        <td>25</td>
+                        <td>RM 30 - 60</td>
+                        <td><span class="popularity high">High</span></td>
+                        <td><a href="student-portal.html" class="btn btn-small">Find Tutor</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Subject Demand Chart -->
+        <section class="subject-demand">
+            <h2>Subject Demand Analysis</h2>
+            <table class="demand-table">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Monthly Requests</th>
+                        <th>Tutor Availability</th>
+                        <th>Demand Level</th>
+                        <th>Average Response Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mathematics</td>
+                        <td>156</td>
+                        <td>42 tutors</td>
+                        <td><span class="demand high">Very High</span></td>
+                        <td>2 hours</td>
+                    </tr>
+                    <tr>
+                        <td>Physics</td>
+                        <td>89</td>
+                        <td>25 tutors</td>
+                        <td><span class="demand medium">Medium-High</span></td>
+                        <td>4 hours</td>
+                    </tr>
+                    <tr>
+                        <td>English</td>
+                        <td>120</td>
+                        <td>35 tutors</td>
+                        <td><span class="demand high">High</span></td>
+                        <td>3 hours</td>
+                    </tr>
+                    <tr>
+                        <td>Chemistry</td>
+                        <td>78</td>
+                        <td>22 tutors</td>
+                        <td><span class="demand medium">Medium</span></td>
+                        <td>6 hours</td>
+                    </tr>
+                    <tr>
+                        <td>Bahasa Melayu</td>
+                        <td>65</td>
+                        <td>30 tutors</td>
+                        <td><span class="demand medium">Medium</span></td>
+                        <td>5 hours</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="subjects.html">Browse Subjects</a></li>
+                        <li><a href="student-portal.html">Student Login</a></li>
+                        <li><a href="tutor-portal.html">Tutor Registration</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Faculty of Computer Science, UMT</p>
+                    <p><i class="fas fa-phone"></i> 09-668 4100</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@edusphere.edu.my">info@edusphere.edu.my</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EduSphere. CSF3133 Group 6 Project.</p>
+                <p>Related Site: <a href="https://www.myprivatetutor.com" target="_blank">MyPrivateTutor</a> | 
+                   <a href="https://sifututor.my" target="_blank">SifuTutor</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Subject filtering
+        document.querySelectorAll('.category-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.category-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                const rows = document.querySelectorAll('.subject-table tbody tr');
+                
+                rows.forEach(row => {
+                    if (category === 'all' || row.getAttribute('data-category') === category) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

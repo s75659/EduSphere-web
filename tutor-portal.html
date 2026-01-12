@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tutor Portal - Register and manage tutoring services">
+    <title>Tutor Portal | EduSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .tutor-portal-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+        
+        .login-section, .register-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tutor-benefits {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .benefit-item {
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .verification-process {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #e8f4fc;
+            border-radius: 10px;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            position: relative;
+        }
+        
+        .process-step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: #3498db;
+            z-index: 0;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .tutor-portal-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .process-step:not(:last-child)::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <h1><i class="fas fa-graduation-cap"></i> EduSphere</h1>
+                <p class="tagline">Tutor Portal</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="subjects.html">Subjects</a></li>
+                    <li><a href="student-portal.html">Student</a></li>
+                    <li><a href="tutor-portal.html" class="active">Tutor</a></li>
+                    <li><a href="admin-portal.html">Admin</a></li>
+					<li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <h1>Tutor Portal</h1>
+            <p class="subtitle">Join our network of verified educators</p>
+        </section>
+
+        <div class="tutor-portal-container">
+            <!-- Login Section -->
+            <div class="login-section">
+                <h2><i class="fas fa-sign-in-alt"></i> Existing Tutors</h2>
+                <p>Login to manage your profile and student requests.</p>
+                
+                <form class="login-form" id="tutor-login-form">
+                    <div class="form-group">
+                        <label for="tutor-email">Email Address *</label>
+                        <input type="email" id="tutor-email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tutor-password">Password *</label>
+                        <input type="password" id="tutor-password" name="password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember me</label>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                
+                <div class="login-demo">
+                    <p><strong>Demo Credentials:</strong></p>
+                    <p>Email: tutor@example.com</p>
+                    <p>Password: tutor123</p>
+                </div>
+            </div>
+            
+            <!-- Registration Section -->
+            <div class="register-section">
+                <h2><i class="fas fa-user-plus"></i> New Tutor Registration</h2>
+                <p>Apply to become a verified tutor on our platform.</p>
+                
+                <form action="https://www.mindspun.com/tutor-registration" method="POST" id="tutor-registration-form">
+                    <div class="form-group">
+                        <label for="reg-name">Full Name *</label>
+                        <input type="text" id="reg-name" name="full_name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-email">Email Address *</label>
+                        <input type="email" id="reg-email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-phone">Phone Number *</label>
+                        <input type="tel" id="reg-phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-qualification">Highest Qualification *</label>
+                        <input type="text" id="reg-qualification" name="qualification" required placeholder="e.g., MSc Physics">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-subjects">Subjects You Can Teach *</label>
+                        <textarea id="reg-subjects" name="subjects" required placeholder="List subjects separated by commas"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-experience">Years of Teaching Experience *</label>
+                        <select id="reg-experience" name="experience" required>
+                            <option value="">Select</option>
+                            <option value="0-1">0-1 years</option>
+                            <option value="1-3">1-3 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">5+ years</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Teaching Mode *</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="mode[]" value="online"> Online</label>
+                            <label><input type="checkbox" name="mode[]" value="in-person"> In-Person</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-availability">Availability</label>
+                        <textarea id="reg-availability" name="availability" rows="3" placeholder="e.g., Weekdays 6-9pm, Weekends 9am-6pm"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="checkbox" id="reg-terms" name="terms" required>
+                        <label for="reg-terms">I agree to the <a href="#">terms and conditions</a> *</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                </form>
+                
+                <p class="form-note">Note: All applications undergo admin verification before approval.</p>
+            </div>
+        </div>
+        
+        <!-- Tutor Benefits -->
+        <section class="tutor-benefits">
+            <h2>Benefits of Joining Our Platform</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4><i class="fas fa-shield-alt"></i> Verification & Trust</h4>
+                    <p>Verified profiles build student trust and credibility.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4><i class="fas fa-users"></i> Student Network</h4>
+                    <p>Access to a large pool of students seeking tutors.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4><i class="fas fa-calendar-check"></i> Schedule Management</h4>
+                    <p>Easy tools to manage bookings and availability.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4><i class="fas fa-star"></i> Rating System</h4>
+                    <p>Build your reputation through student reviews.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4><i class="fas fa-lock"></i> Secure Payments</h4>
+                    <p>Safe and reliable payment processing system.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4><i class="fas fa-chart-line"></i> Growth Opportunities</h4>
+                    <p>Potential for increased earnings and student base.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Verification Process -->
+        <section class="verification-process">
+            <h2>Tutor Verification Process</h2>
+            <p>Our 4-step verification ensures quality and trust:</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Application</h4>
+                    <p>Submit registration form with qualifications</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Document Review</h4>
+                    <p>Admin reviews certificates and credentials</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Interview</h4>
+                    <p>Brief online interview (if required)</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Approval</h4>
+                    <p>Account activated upon successful verification</p>
+                </div>
+            </div>
+            
+            <p class="process-note">Average processing time: 3-5 working days</p>
+        </section>
+        
+        <!-- Stats Table -->
+        <section class="tutor-stats">
+            <h2>Tutor Statistics</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Average Rate/Hour</th>
+                        <th>Student Demand</th>
+                        <th>Platform Commission</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Primary School (UPSR)</td>
+                        <td>RM 25 - 40</td>
+                        <td>High</td>
+                        <td>15%</td>
+                    </tr>
+                    <tr>
+                        <td>Secondary School (PT3)</td>
+                        <td>RM 30 - 50</td>
+                        <td>High</td>
+                        <td>15%</td>
+                    </tr>
+                    <tr>
+                        <td>SPM Level</td>
+                        <td>RM 40 - 70</td>
+                        <td>Very High</td>
+                        <td>15%</td>
+                    </tr>
+                    <tr>
+                        <td>STPM/University</td>
+                        <td>RM 50 - 100+</td>
+                        <td>Medium</td>
+                        <td>15%</td>
+                    </tr>
+                    <tr>
+                        <td>Specialist Subjects</td>
+                        <td>RM 60 - 120+</td>
+                        <td>Medium</td>
+                        <td>15%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="subjects.html">Browse Subjects</a></li>
+                        <li><a href="student-portal.html">Student Login</a></li>
+                        <li><a href="tutor-portal.html">Tutor Registration</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Faculty of Computer Science, UMT</p>
+                    <p><i class="fas fa-phone"></i> 09-668 4100</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@edusphere.edu.my">info@edusphere.edu.my</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EduSphere. CSF3133 Group 6 Project.</p>
+                <p>Related Site: <a href="https://www.myprivatetutor.com" target="_blank">MyPrivateTutor</a> | 
+                   <a href="https://sifututor.my" target="_blank">SifuTutor</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tutor Login Demo
+        document.getElementById('tutor-login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('tutor-email').value;
+            const password = document.getElementById('tutor-password').value;
+            
+            if (email === 'tutor@example.com' && password === 'tutor123') {
+                alert('Login successful! Welcome to Tutor Dashboard (Demo Mode)');
+                // In real implementation, redirect to tutor dashboard
+            } else {
+                alert('Invalid credentials. Use demo: tutor@example.com / tutor123');
+            }
+        });
+        
+        // Tutor Registration Validation
+        document.getElementById('tutor-registration-form').addEventListener('submit', function(e) {
+            const subjects = document.getElementById('reg-subjects').value;
+            const modes = document.querySelectorAll('input[name="mode[]"]:checked');
+            
+            if (!subjects.trim()) {
+                e.preventDefault();
+                alert('Please list the subjects you can teach.');
+                return false;
+            }
+            
+            if (modes.length === 0) {
+                e.preventDefault();
+                alert('Please select at least one teaching mode.');
+                return false;
+            }
+            
+            alert('Application submitted! Admin will review your application within 3-5 working days.');
+            return true;
+        });
+    </script>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
